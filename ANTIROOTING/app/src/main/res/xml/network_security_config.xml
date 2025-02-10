@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <domain-config>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <trust-anchors>
+            <pin-set>
+                <pin digest="SHA-256">Pz9sZj99Pz9IED9CUmBERD8/IwM/Ij9FP3FiPz8gKj8NCg==</pin>
+                <pin digest="SHA-256">Pz9sZj99Pz9IED9CUmBERD8/IwM/Ij9FP3FiPz8gKj8NCg==</pin>
+            </pin-set>
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
