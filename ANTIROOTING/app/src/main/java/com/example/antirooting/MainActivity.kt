@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.antirooting.presentation.CheckEmulator
 import com.example.antirooting.presentation.CheckRooted
 import com.example.antirooting.presentation.LoginScreen
 import com.example.antirooting.presentation.ViewModel
@@ -34,8 +35,28 @@ class MainActivity : ComponentActivity() {
                     LoginScreen(viewModel = viewModel)
                 }
 
+                if(CheckEmulator().checkEmulatorFiles()){
+                    AlertDialog(
+                        onDismissRequest = {},
+                        confirmButton = {
+                            Button(
+                                onClick = {
+                                    this.finish()
+                                }
+                            ) {
+                                Text("Ok")
+                            }
+                        },
+                        title = {
+                            Text("This devices is an emulator!!")
+                        },
+                        text = {
+                            Text("This application will be closed.")
+                        }
+                    )
+                }
 
-                if(CheckRooted().checkIfDeviceIsRooted()){
+                if(CheckRooted().checkIfDeviceIsRooted()) {
                     AlertDialog(
                         onDismissRequest = {},
                         confirmButton = {
